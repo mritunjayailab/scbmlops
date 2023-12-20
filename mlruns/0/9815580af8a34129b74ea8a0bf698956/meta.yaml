@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/labadmin/Desktop/scbmlops/mlruns/0/9815580af8a34129b74ea8a0bf698956/artifacts
+end_time: 1703059580443
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9815580af8a34129b74ea8a0bf698956
+run_name: intrigued-kit-836
+run_uuid: 9815580af8a34129b74ea8a0bf698956
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703059570701
+status: 3
+tags: []
+user_id: labadmin

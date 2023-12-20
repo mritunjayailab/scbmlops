@@ -3,16 +3,16 @@
 import argparse
 import glob
 import os
-
+import mlflow
 import pandas as pd
-
+import azureml.mlflow
 from sklearn.linear_model import LogisticRegression
-
+from sklearn.model_selection import train_test_split
 
 # define functions
 def main(args):
     # TO DO: enable autologging
-
+    mlflow.sklearn.autolog()
 
     # read data
     df = get_csvs_df(args.training_data)
@@ -34,11 +34,19 @@ def get_csvs_df(path):
 
 
 # TO DO: add function to split data
+def split_data(df):
+    X, y = df[['Pregnancies','PlasmaGlucose','DiastolicBloodPressure','TricepsThickness','SerumInsulin','BMI','DiabetesPedigree','Age']].values, df['Diabetic'].values
+    return train_test_split(X,y,test_size=0.2,stratify=y,random_state=5)
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
-    LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
+    model = LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
+    from sklearn import metrics
+    ypred = model.predict(X_test)
+    print("Accuracy ", metrics.accuracy_score(y_test,ypred))
+    print("Recall ", metrics.recall_score(y_test,ypred))
+
 
 
 def parse_args():

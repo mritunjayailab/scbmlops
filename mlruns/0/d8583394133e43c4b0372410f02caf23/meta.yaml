@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/labadmin/Desktop/scbmlops/mlruns/0/d8583394133e43c4b0372410f02caf23/artifacts
+end_time: 1703059433993
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d8583394133e43c4b0372410f02caf23
+run_name: gentle-mule-799
+run_uuid: d8583394133e43c4b0372410f02caf23
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703059418591
+status: 3
+tags: []
+user_id: labadmin
